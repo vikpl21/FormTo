@@ -5,6 +5,10 @@ v 1.0
 Additional description about the project and its features.
 
 Built With
+
 BackEnd - FasAPI
+
 Technologies used -  SQLAlchemy 
+
 Database - PostgreSQL
+
