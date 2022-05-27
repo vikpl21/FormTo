@@ -57,7 +57,7 @@ async def get_route(token: str, credentials_exception: str):
         if route is not None:
             route = dict(route)
             return route
-        return {"id": None, "isEmpty": True}
+        return {"id": None}
     except JWTError:
         raise credentials_exception
 

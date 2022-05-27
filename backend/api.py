@@ -147,7 +147,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
             detail="Підтвердіть свою пошту"
         )
     access_token = create_access_token(data={"id": user["id"], "sub": user["email"]})
-    return {"access_token": access_token, "token_type": "bearer", "message": "Вхід виконано"}
+    return {"access_token": access_token, "token_type": "bearer", "message": "Вхід виконано", "name": user["name"], "rating_user": user["rating_user"]}
 
 
 @api.post("/create-route")
@@ -271,9 +271,8 @@ async def user_routes(current_user: User = Depends(get_current_user)):
     result = await database.fetch_one(query)
     if result is not None:
         result = dict(result)
-        result.update({"isEmpty": False})
         return result
-    return {"isEmpty": True}
+    return {}
 
 
 @api.get("/my-routes")
@@ -292,9 +291,8 @@ async def driver_routes(current_user: User = Depends(get_current_user), current_
     if route is not None:
         route = dict(route)
         route.update({"sum": seats})
-        route.update({"isEmpty": False})
         return route
-    return {"isEmpty": True}
+    return {}
 
 
 @api.get("/routes-history")
