@@ -6,4 +6,5 @@ Additional description about the project and its features.
 
 Built With
 BackEnd - FasAPI
-Technologies used -             
+Technologies used -  SQLAlchemy 
+Database - PostgreSQL
