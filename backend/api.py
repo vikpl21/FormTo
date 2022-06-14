@@ -26,6 +26,7 @@ api.include_router(ws)
 
 settings = Settings()
 
+# gmail settings
 mail_config = ConnectionConfig(
     MAIL_USERNAME=settings.mail_username,
     MAIL_PASSWORD=settings.mail_password,
@@ -52,6 +53,7 @@ api.add_middleware(
 )
 
 
+# routes
 @api.on_event("startup")
 async def startup():
     await database.connect()
