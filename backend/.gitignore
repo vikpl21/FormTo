@@ -3,8 +3,10 @@
 # dependencies
 /venv
 /__pycache__
+.gitignore
 .env
 env.sh
+env.bat
 translateapi.json
 
 

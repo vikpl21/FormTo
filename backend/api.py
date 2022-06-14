@@ -21,7 +21,7 @@ from pydmodels import (CreateRoute, DeleteRoute, PassengerData, Register,
 from settings import Settings, timezone
 from webs import manager, ws
 
-api = FastAPI()
+api = FastAPI(docs_url=None, redoc_url=None)
 api.include_router(ws)
 
 settings = Settings()
